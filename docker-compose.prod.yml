@@ -1,15 +1,17 @@
-version: '3'
+version: "3"
 services:
   react-app:
     # for -it flag in the terminal
-    # stdin_open: true 
-    # tty: true 
+    # stdin_open: true
+    # tty: true
     build:
       context: .
       dockerfile: Dockerfile.prod
       args:
         - REACT_APP_NAME=Akshay Sood PROD
+    # image: specific image name you want to download. Let's say you have a custom image already built up
+    container_name: react_app_prod
     ports:
-      - 8080:80
+      - 80:80
     # env_file: # to include .env file for env vars
     #   - ./.env

@@ -1,18 +1,20 @@
-version: '3'
+version: "3"
 services:
   react-app:
     # for -it flag in the terminal
-    # stdin_open: true 
-    # tty: true 
+    # stdin_open: true
+    # tty: true
     build:
       context: .
       dockerfile: Dockerfile.dev
+    # image: specific image name you want to download. Let's say you have a custom image already built up
+    container_name: react_app_dev
     ports:
       - 3000:3000
     environment:
       - REACT_APP_NAME=Akshay Sood DEV
       # below is for hot reloading
-      - WATCHPACK_POLLING=true 
+      - WATCHPACK_POLLING=true
     # env_file: # to include .env file for env vars
     #   - ./.env
     volumes:
