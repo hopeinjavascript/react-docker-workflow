@@ -1,11 +1,15 @@
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/Header/Header";
+import Posts from "./components/Posts/Posts";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        {`Learn React with ${process.env.REACT_APP_NAME}. Welcome to the BEST Docker course eva!`}
-      </header>
+      <Routes>
+        <Route path="/" element={<Header />} />
+        <Route path="posts" element={<Posts />} />
+      </Routes>
     </div>
   );
 }
